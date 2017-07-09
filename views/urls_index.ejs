@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TinyApp</title>
+</head>
+<body>
+  <% include partials/_header %>
+  <ul>
+      <% for (let link of urls) { %>
+    <li>  <%= link.shortURL %> <%= link.longURL %>
+      <a href="/urls/<%= link.shortURL%>">Edit</a>
+      <form method="POST" action="/urls/<%= link.shortURL%>/delete" style="display:inline-block">
+        <button>Delete</button>
+      </form>
+      <% } %>
+    </li>
+  </ul>
+  <a href="/urls/new">Shorten URL</a>
+</body>
+</html>

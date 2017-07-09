@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TinyApp</title>
+  </head>
+  <body>
+    <% include partials/_header %>
+    <p>
+      ShortURL: <%= shortURL %>
+      <br></br>
+      LongURL: <%= urls[shortURL].longURL %>
+    </p>
+    <form action="/urls/<%= shortURL %>/update" method="POST" style="margin:150px;">
+      <label for="longURL">Update LongURL:</label>
+      <input id="longURL" type="text" name="longURL" placeholder="http://" style="width: 300px">
+      <input type="submit" value="Update">
+    </form>
+  </body>
+</html>
